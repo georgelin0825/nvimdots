@@ -24,21 +24,22 @@ return function()
 			{
 				elements = {
 					-- Provide as ID strings or tables with "id" and "size" keys
+					{ id = "repl", size = 0.05 },
 					{
 						id = "scopes",
 						size = 0.3,
 					},
 					{ id = "watches", size = 0.3 },
-					{ id = "stacks", size = 0.3 },
+					{ id = "stacks", size = 0.25 },
 					{ id = "breakpoints", size = 0.1 },
 				},
-				size = 0.3,
+				size = 0.1,
 				position = "right",
 			},
 			{
 				elements = {
-					{ id = "console", size = 0.55 },
-					{ id = "repl", size = 0.45 },
+					{ id = "console", size = 0.9 },
+					
 				},
 				position = "bottom",
 				size = 0.25,

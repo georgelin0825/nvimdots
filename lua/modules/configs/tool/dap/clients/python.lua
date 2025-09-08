@@ -70,5 +70,25 @@ return function()
 				end
 			end,
 		},
+		{
+			-- The first three options are required by nvim-dap
+			type = "python", -- the type here established the link to the adapter definition: `dap.adapters.python`
+			request = "launch",
+			name = "sglang debug",
+			module = 'sglang.bench_one_batch',
+			args = {
+				'--model-path', '/workspace/model/Qwen3-4B',
+				'--load-format', 'dummy'
+			},
+			console = "integratedTerminal",
+			pythonPath = function()
+				local venv = vim.env.CONDA_PREFIX
+				if venv then
+					return is_windows and venv .. "/Scripts/pythonw.exe" or venv .. "/bin/python"
+				else
+					return is_windows and "pythonw.exe" or "python3"
+				end
+			end,
+		},
 	}
 end
